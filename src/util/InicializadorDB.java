@@ -15,7 +15,11 @@ public class InicializadorDB {
                     CREATE TABLE IF NOT EXISTS usuarios (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         nome TEXT NOT NULL,
-                        email TEXT UNIQUE NOT NULL
+                        cpf TEXT,
+                        email TEXT UNIQUE,
+                        matricula TEXT UNIQUE,
+                        tipo TEXT NOT NULL,
+                        departamento TEXT
                     )
                     """);
 
@@ -24,7 +28,9 @@ public class InicializadorDB {
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         titulo TEXT NOT NULL,
                         autor TEXT NOT NULL,
-                        quantidade INTEGER NOT NULL
+                        ano_publicacao INTEGER,
+                        editora TEXT,
+                        disponivel INTEGER NOT NULL
                     )
                     """);
 
@@ -34,7 +40,9 @@ public class InicializadorDB {
                         usuario_id INTEGER NOT NULL,
                         livro_id INTEGER NOT NULL,
                         data_emprestimo TEXT NOT NULL,
-                        data_devolucao TEXT,
+                        data_devolucao_prevista TEXT NOT NULL,
+                        data_devolucao_real TEXT,
+                        status TEXT NOT NULL,
                         FOREIGN KEY(usuario_id) REFERENCES usuarios(id),
                         FOREIGN KEY(livro_id) REFERENCES livros(id)
                     )
