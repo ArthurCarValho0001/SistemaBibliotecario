@@ -12,10 +12,6 @@ public class Livro {
     public Livro() {
     }
 
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-
     public int getId() {
         return id;
     }
@@ -54,6 +50,10 @@ public class Livro {
 
     public void setEditora(String editora) {
         this.editora = editora;
+    }
+
+    public boolean isDisponivel() {
+        return disponivel;
     }
 
     public void setDisponivel(boolean disponivel) {

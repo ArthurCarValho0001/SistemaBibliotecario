@@ -11,6 +11,7 @@ public class InicializadorDB {
 
             Connection conexao = ConexaoDB.getConexao();
             Statement stmt = conexao.createStatement();
+
             stmt.execute("""
                     CREATE TABLE IF NOT EXISTS usuarios (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
